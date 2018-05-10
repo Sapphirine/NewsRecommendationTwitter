@@ -24,3 +24,7 @@ newsReccomender.R - Code to use a model and recommend news articles to a specifi
 
 Visualization.R - Code to produce visualizations. 
 
+try.ipynb- Code for nueural network model
+
+Try some new model- Code for MultinomialNB, LogisticRegression, LinearSVM and RandomForest.
+
