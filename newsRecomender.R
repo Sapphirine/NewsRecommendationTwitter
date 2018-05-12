@@ -143,13 +143,13 @@ reccomendNews <- function(user, nTweet, model, numArticle, NYTIMES_KEY){
   recommendedArticles <- data.frame()
   #Go through each of the articleSamp values and get articles
   for(i in 1:nrow(articleSamp)){
-    print(articleSamp$Var1[i])
-    articles <- as.data.frame(nyt_mostpopular(metric = "mostviewed",section = articleSamp$Var1[i], apikey = NYTIMES_KEY, days = 1))
+    articles <- as.data.frame(nyt_mostpopular(metric = "mostviewed",section = as.character(articleSamp$Var1[i]), apikey = NYTIMES_KEY, days = 1))
     #Get the top x rows
     recommendedArticles <- rbind(recommendedArticles,articles[1:articleSamp[i,]$Freq,])
   }
   return(recommendedArticles)
   
 }
+
 result <- reccomendNews("BarackObama",100,bowModel, 5, NYTIMES_KEY)
 
